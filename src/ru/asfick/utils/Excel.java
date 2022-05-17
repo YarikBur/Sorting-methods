@@ -39,8 +39,8 @@ public class Excel {
 		sheet = workbook.createSheet(sheetName);
 	}
 	
-	public void createLineInfo(String methodName) {
-		fileInfo.put(mapIndex++, new Info(methodName, attempts));
+	public void createLineInfo(int length) {
+		fileInfo.put(mapIndex++, new Info(length, attempts));
 	}
 	
 	public void setTime(int index, double time) {
@@ -56,7 +56,7 @@ public class Excel {
 			HSSFCell cell = row.createCell(index);
 			
 			if (index == 0)
-				cell.setCellValue("Название сортировки");
+				cell.setCellValue("Кол-во символов");
 			else if ( index == (colls - 1) )
 				cell.setCellValue("Суммарное время");
 			else
@@ -77,7 +77,7 @@ public class Excel {
 					HSSFCell cell = row.createCell(infoColl);
 					
 					if (infoColl == 0)
-						cell.setCellValue(info.getMethodName());
+						cell.setCellValue(info.getLength());
 					else if ( infoColl == (colls - 1) )
 						cell.setCellValue(info.getAllTime());
 					else
@@ -85,6 +85,9 @@ public class Excel {
 				}
 			}
 		}
+		
+		sheet.autoSizeColumn(0);
+		sheet.autoSizeColumn(colls-1);
 		
 		workbook.write(fileOutputStream);
 	}
@@ -95,23 +98,24 @@ public class Excel {
 	}
 	
 	
+	
 	private class Info {
-		private String methodName;
+		private int length;
 		private double[] times;
 		private double allTime;
 		
-		public Info(String lineName, int attempts) {
-			getMethodName(lineName);
+		public Info(int length, int attempts) {
+			setLength(length);
 			
 			times = new double[attempts];
 		}
 		
-		public String getMethodName() {
-			return methodName;
+		public int getLength() {
+			return length;
 		}
 		
-		public void getMethodName(String methodName) {
-			this.methodName = methodName;
+		public void setLength(int length) {
+			this.length = length;
 		}
 		
 		public void setTime(int index, double time) {

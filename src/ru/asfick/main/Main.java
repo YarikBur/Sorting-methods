@@ -21,23 +21,24 @@ public class Main {
 			new int[10],
 			new int[100],
 			new int[1000],
-			new int[10000],
-			new int[100000]
+			new int[10000]/*,
+			new int[100000]*/
 	};
 	
 	public static void main(String[] args) {
 		try {
 			excel = new Excel("F:\\Desktop\\methods.xls", methods.length * array.length, ATTEMPTS);
-			excel.createSheet("Методы сортировок");
 			System.out.print("Файл создан и открыт.\n");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		
 		for (SortingMethod method : methods) {
+			excel.createSheet(method.getName());
 			System.out.print("Метод \"" + method.getName() + "\" начало сортировки.\n");
+			
 			for (int array = 0; array < Main.array.length; array++) {
-				excel.createLineInfo(method.getName() + " (" + Main.array[array].length + " символов)");
+				excel.createLineInfo(Main.array[array].length);
 				double time = 0d;
 				
 				time = ExecutionTime.executionTime(method, ATTEMPTS, Main.array[array], excel);
@@ -46,6 +47,7 @@ public class Main {
 				
 				System.out.print("Метод \"" + method.getName() + "\" (" + Main.array[array].length + " символов) добавлено.\n");
 			}
+			
 			System.out.print("Метод \"" + method.getName() + "\" конец сортировки.\n");
 		}
 		
