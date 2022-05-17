@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import ru.asfick.methods.BoubleSorting;
+import ru.asfick.methods.ShakerSorting;
 import ru.asfick.methods.SortingMethod;
 import ru.asfick.utils.Excel;
 import ru.asfick.utils.ExecutionTime;
@@ -14,7 +15,8 @@ public class Main {
 	private static Excel excel;
 	
 	private static SortingMethod[] methods = {
-			new BoubleSorting()
+			new BoubleSorting(),
+			new ShakerSorting()
 	};
 	
 	private static int[][] array = {
@@ -27,15 +29,16 @@ public class Main {
 	
 	public static void main(String[] args) {
 		try {
-			excel = new Excel("F:\\Desktop\\methods.xls", methods.length * array.length, ATTEMPTS);
+			excel = new Excel("F:\\Desktop\\methods.xls", array.length, ATTEMPTS, methods.length);
+			excel.createSheet(methods);
 			System.out.print("Файл создан и открыт.\n");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		
 		for (SortingMethod method : methods) {
-			excel.createSheet(method.getName());
-			System.out.print("Метод \"" + method.getName() + "\" начало сортировки.\n");
+			
+			System.out.print("\nМетод \"" + method.getName() + "\" начало сортировок.\n");
 			
 			for (int array = 0; array < Main.array.length; array++) {
 				excel.createLineInfo(Main.array[array].length);
@@ -45,10 +48,10 @@ public class Main {
 				
 				excel.setAllTime(time);
 				
-				System.out.print("Метод \"" + method.getName() + "\" (" + Main.array[array].length + " символов) добавлено.\n");
+				System.out.print("Метод \"" + method.getName() + "\" с " + Main.array[array].length + " символами закончил сортировку.\n");
 			}
 			
-			System.out.print("Метод \"" + method.getName() + "\" конец сортировки.\n");
+			System.out.print("Метод \"" + method.getName() + "\" конец сортировок.\n\n");
 		}
 		
 		try {
