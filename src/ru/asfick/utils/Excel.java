@@ -40,7 +40,6 @@ public class Excel {
 	}
 	
 	public void createSheet(SortingMethod[] methods) {
-		
 		sheet = new HSSFSheet[methods.length];
 		
 		for(int index = 0; index < methods.length; index++) {
@@ -53,11 +52,11 @@ public class Excel {
 	}
 	
 	public void setTime(int index, double time) {
-		fileInfo.get(mapIndex-1).setTime(index, time);
+		fileInfo.get(mapIndex - 1).setTime(index, time);
 	}
 	
 	public void setAllTime(double allTime) {
-		fileInfo.get(mapIndex-1).setAllTime(allTime);
+		fileInfo.get(mapIndex - 1).setAllTime(allTime);
 	}
 	
 	private void firstRow() {
@@ -92,7 +91,7 @@ public class Excel {
 						else if ( infoColl == (colls - 1) )
 							cell.setCellValue(info.getAllTime());
 						else
-							cell.setCellValue(info.getTimes()[infoColl-1]);
+							cell.setCellValue(info.getTimes()[infoColl - 1]);
 					}
 				}
 				if (index_b != rows-1)
@@ -100,7 +99,7 @@ public class Excel {
 			}
 			
 			sheet[index_a].autoSizeColumn(0);
-			sheet[index_a].autoSizeColumn(colls-1);
+			sheet[index_a].autoSizeColumn(colls - 1);
 		}
 		
 		workbook.write(fileOutputStream);
