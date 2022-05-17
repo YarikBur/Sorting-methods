@@ -23,8 +23,8 @@ public class Main {
 			new int[10],
 			new int[100],
 			new int[1000],
-			new int[10000]/*,
-			new int[100000]*/
+			new int[10000],
+			new int[100000]
 	};
 	
 	public static void main(String[] args) {
