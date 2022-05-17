@@ -60,7 +60,7 @@ public class Excel {
 			else if ( index == (colls - 1) )
 				cell.setCellValue("Суммарное время");
 			else
-				cell.setCellValue("Попытку №" + index);
+				cell.setCellValue("№" + index);
 		}
 	}
 	
@@ -87,7 +87,6 @@ public class Excel {
 		}
 		
 		workbook.write(fileOutputStream);
-		sheet.autoSizeColumn(1);
 	}
 	
 	public void close() throws IOException {
