@@ -1,5 +1,10 @@
 package ru.asfick.methods;
 
+/**
+ * Класс, отвечающий за сортировку расчёской
+ * @author Asfick
+ *
+ */
 public class CombSorting implements SortingMethod {
 	
 	private final static String NAME = "Сортировка расчёской";

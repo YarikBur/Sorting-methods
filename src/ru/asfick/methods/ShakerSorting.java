@@ -1,5 +1,10 @@
 package ru.asfick.methods;
 
+/**
+ * Класс, отвечающий за шейкерную сортировку
+ * @author Asfick
+ *
+ */
 public class ShakerSorting implements SortingMethod {
 	
 	private final static String NAME = "Шейкерная сортировка";

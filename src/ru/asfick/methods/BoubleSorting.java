@@ -1,5 +1,10 @@
 package ru.asfick.methods;
 
+/**
+ * Класс, отвечающий за сортировку пузырьком
+ * @author Asfick
+ *
+ */
 public class BoubleSorting implements SortingMethod {
 	
 	private final static String NAME = "Сортировка пузырьком";

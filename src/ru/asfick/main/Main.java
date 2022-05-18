@@ -11,15 +11,28 @@ import ru.asfick.utils.Excel;
 import ru.asfick.utils.ExecutionTime;
 
 public class Main {
+	/**
+	 * Настройка, отвечающая за путь созданного файла с настройками
+	 */
 	private static final String FILE_PATH = "F:\\Desktop\\methods.xls";
+	
+	/**
+	 * Настройка, отвечающая за кол-во повторов метода сортировки, каждой длины массива
+	 */
 	private static final int ATTEMPTS = 3;
 	
+	/**
+	 * Методы сортировки, которые будут учавствовать в проверке
+	 */
 	private static SortingMethod[] methods = {
 			new BoubleSorting(),
 			new ShakerSorting(),
 			new CombSorting()
 	};
 	
+	/**
+	 * Массивы разной длины, в которых будут генерироваться значения и после сортироваться
+	 */
 	private static int[][] array = {
 			new int[10],
 			new int[100],
@@ -29,6 +42,7 @@ public class Main {
 	};
 	
 	private static Excel excel;
+	
 	
 	public static void main(String[] args) {
 		try {
