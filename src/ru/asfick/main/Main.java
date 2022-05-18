@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import ru.asfick.methods.BoubleSorting;
 import ru.asfick.methods.CombSorting;
+import ru.asfick.methods.InsertSorting;
 import ru.asfick.methods.ShakerSorting;
 import ru.asfick.methods.SortingMethod;
 import ru.asfick.utils.Excel;
@@ -27,7 +28,8 @@ public class Main {
 	private static SortingMethod[] methods = {
 			new BoubleSorting(),
 			new ShakerSorting(),
-			new CombSorting()
+			new CombSorting(),
+			new InsertSorting()
 	};
 	
 	/**
@@ -61,11 +63,13 @@ public class Main {
 				excel.createLineInfo(Main.array[array].length);
 				double time = 0d;
 				
+				System.out.print("Метод \"" + method.getName() + "\" с " + Main.array[array].length + " символами начал сортировку.");
+				
 				time = ExecutionTime.executionTime(method, ATTEMPTS, Main.array[array], excel);
 				
 				excel.setAllTime(time);
 				
-				System.out.print("Метод \"" + method.getName() + "\" с " + Main.array[array].length + " символами закончил сортировку.\n");
+				System.out.print("\rМетод \"" + method.getName() + "\" с " + Main.array[array].length + " символами закончил сортировку.\n");
 			}
 			
 			System.out.print("Метод \"" + method.getName() + "\" конец сортировок.\n\n");

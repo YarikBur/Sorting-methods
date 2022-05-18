@@ -28,7 +28,9 @@ private static final int ATTEMPTS = 3;
 ```java
 private static SortingMethod[] methods = {
   new BoubleSorting(),
-  new ShakerSorting()
+  new ShakerSorting(),
+  new CombSorting(),
+  new InsertSorting()
 };
 ```
 
@@ -57,7 +59,7 @@ private static int[][] array = {
 | :heavy_check_mark: | Сортировка пузырьком |
 | :heavy_check_mark: | Шейкерная сортировка |
 | :heavy_check_mark: | Сортировка расчёской |
-| :x: | Сортировка вставками |
+| :heavy_check_mark: | Сортировка вставками |
 | :x: | Сортировка выбором |
 | :x: | Быстрая сортировка |
 | :x: | Сортировка слиянием |

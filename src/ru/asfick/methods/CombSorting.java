@@ -17,8 +17,8 @@ public class CombSorting implements SortingMethod {
 	@Override
 	public void sort(int[] array) {
 
-		System.out.print('\n');
-		SortingMethod.writeArray(array);
+		//System.out.print('\n');
+		//SortingMethod.writeArray(array);
 		
 		double factor = 1.247d;
 		double step = array.length - 1;
@@ -32,11 +32,11 @@ public class CombSorting implements SortingMethod {
 			step /= factor;
 		}
 		
-		SortingMethod.writeArray(array);
+		//SortingMethod.writeArray(array);
 		
 		new BoubleSorting().sort(array);
 		
-		SortingMethod.writeArray(array);
+		//SortingMethod.writeArray(array);
 	}
 
 }
