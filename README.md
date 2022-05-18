@@ -1,4 +1,4 @@
-# Методы сортировки [![Build Status](https://img.shields.io/badge/Version-2022/05/17-red.svg)](#SortingMethods)
+# Методы сортировки [![Build Status](https://img.shields.io/badge/Version-2022/05/18-red.svg)](#SortingMethods)
 Разновидности методов сортировки на Java.
 <hr>
 
@@ -51,7 +51,7 @@ private static int[][] array = {
 | :---: | :---: |
 | :heavy_check_mark: | Сортировка пузырьком |
 | :heavy_check_mark: | Шейкерная сортировка |
-| :x: | Сортировка расчёской |
+| :heavy_check_mark: | Сортировка расчёской |
 | :x: | Сортировка вставками |
 | :x: | Сортировка выбором |
 | :x: | Быстрая сортировка |

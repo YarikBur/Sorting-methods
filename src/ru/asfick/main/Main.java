@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import ru.asfick.methods.BoubleSorting;
+import ru.asfick.methods.CombSorting;
 import ru.asfick.methods.ShakerSorting;
 import ru.asfick.methods.SortingMethod;
 import ru.asfick.utils.Excel;
@@ -12,11 +13,10 @@ import ru.asfick.utils.ExecutionTime;
 public class Main {
 	private static final int ATTEMPTS = 3;
 	
-	private static Excel excel;
-	
 	private static SortingMethod[] methods = {
 			new BoubleSorting(),
-			new ShakerSorting()
+			new ShakerSorting(),
+			new CombSorting()
 	};
 	
 	private static int[][] array = {
@@ -26,6 +26,8 @@ public class Main {
 			new int[10000],
 			new int[100000]
 	};
+	
+	private static Excel excel;
 	
 	public static void main(String[] args) {
 		try {
