@@ -30,7 +30,8 @@ private static SortingMethod[] methods = {
   new BoubleSorting(),
   new ShakerSorting(),
   new CombSorting(),
-  new InsertSorting()
+  new InsertSorting(),
+  new SelectionSort()
 };
 ```
 
@@ -60,7 +61,7 @@ private static int[][] array = {
 | :heavy_check_mark: | Шейкерная сортировка |
 | :heavy_check_mark: | Сортировка расчёской |
 | :heavy_check_mark: | Сортировка вставками |
-| :x: | Сортировка выбором |
+| :heavy_check_mark: | Сортировка выбором |
 | :x: | Быстрая сортировка |
 | :x: | Сортировка слиянием |
 | :x: | Пирамидальная сортировка |
