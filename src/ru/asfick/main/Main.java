@@ -11,6 +11,7 @@ import ru.asfick.utils.Excel;
 import ru.asfick.utils.ExecutionTime;
 
 public class Main {
+	private static final String FILE_PATH = "F:\\Desktop\\methods.xls";
 	private static final int ATTEMPTS = 3;
 	
 	private static SortingMethod[] methods = {
@@ -31,7 +32,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		try {
-			excel = new Excel("F:\\Desktop\\methods.xls", array.length, ATTEMPTS, methods.length);
+			excel = new Excel(FILE_PATH, array.length, ATTEMPTS, methods.length);
 			excel.createSheet(methods);
 			System.out.print("Файл создан и открыт.\n");
 		} catch (FileNotFoundException e) {
