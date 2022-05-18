@@ -17,24 +17,17 @@ public class ShakerSorting implements SortingMethod {
 		
 		int left = 0;
 		int right = array.length - 1;
-		int tmp = 0;
 		
 		while(left <= right) {
 			for (int index = right; index > left; index--) {
-				if (array[index - 1] > array[index]) {
-					tmp = array[index];
-					array[index] = array[index - 1];
-					array[index - 1] = tmp;
-				}
+				if (array[index - 1] > array[index]) 
+					SortingMethod.swap( array, index, index - 1 );
 			}
 			left++;
 			
 			for (int index = left; index < right; index++) {
-				if (array[index + 1] < array[index]) {
-					tmp = array[index];
-					array[index] = array[index + 1];
-					array[index + 1] = tmp;
-				}
+				if (array[index + 1] < array[index])
+					SortingMethod.swap( array, index, index + 1 );
 			}
 			right--;
 		}

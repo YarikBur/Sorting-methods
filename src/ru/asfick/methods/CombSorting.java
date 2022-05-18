@@ -17,15 +17,11 @@ public class CombSorting implements SortingMethod {
 		
 		double factor = 1.247d;
 		double step = array.length - 1;
-		int tmp = 0;
 
 		while (step >= 1) {
 			for (int index = 0; index + step < array.length; index++) {
-				if (array[index] > array[(int) (index + step)]) {
-					tmp = array[index];
-					array[index] = array[(int) (index + step)];
-					array[(int) (index + step)] = tmp;
-				}
+				if (array[index] > array[(int) (index + step)])
+					SortingMethod.swap( array, index, (int) (index + step) );
 			}
 			
 			step /= factor;
