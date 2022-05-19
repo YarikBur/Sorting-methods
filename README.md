@@ -9,6 +9,8 @@
 
 [Добавленные методы сортировок](#добавленные-методы-сортировок)
 
+[Скачать поледнюю версию](https://github.com/YarikBur/Sorting-methods/releases)
+
 <hr>
 
 ## Описание проекта
@@ -16,12 +18,12 @@
 
 Путь к файлу, в котором будет записан результат времени сортировки.
 ```java
-private static final String FILE_PATH = "F:\\Desktop\\methods.xls";
+private static String filePath = "F:\\Desktop\\methods.xls";
 ```
 
 Сколько раз надо будет повторять сортировку массива одной длины (заполнение у массива каждый раз генерируется).
 ```java
-private static final int ATTEMPTS = 3;
+private static int attempts = 3;
 ```
 
 В основном файле можно указать классы (методы сортировки), которые будут работать с массивами.
@@ -47,6 +49,12 @@ private static int[][] array = {
 ```
 
 ## Примеры
+Запуск приложения с искользованием аргументов.
+Аргументы не обязательные. Стандартные значения приведены выше.
+```
+java -jar methods.jar "path" attempts
+```
+
 ![Excel Output](https://github.com/YarikBur/Sorting-methods/blob/main/readme-images/Excel.png)
 
 На изображении видно, что каждый вид сортировки будет заноситься на отдельный лист в книге.

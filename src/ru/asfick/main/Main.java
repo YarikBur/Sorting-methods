@@ -16,12 +16,12 @@ public class Main {
 	/**
 	 * Настройка, отвечающая за путь созданного файла с настройками
 	 */
-	private static final String FILE_PATH = "F:\\Desktop\\methods.xls";
+	private static String filePath = "F:\\Desktop\\methods.xls";
 	
 	/**
 	 * Настройка, отвечающая за кол-во повторов метода сортировки, каждой длины массива
 	 */
-	private static final int ATTEMPTS = 3;
+	private static int attempts = 3;
 	
 	/**
 	 * Методы сортировки, которые будут учавствовать в проверке
@@ -48,14 +48,45 @@ public class Main {
 	private static Excel excel;
 	
 	
-	public static void main(String[] args) {
+	private static void saveArgs(String[] args) {
+		filePath = args[0];
+		System.out.print("Path: \"" + filePath + "\"\n");
 		try {
-			excel = new Excel(FILE_PATH, array.length, ATTEMPTS, methods.length);
+			attempts = Integer.parseInt(args[1]);
+			System.out.print("Attempts: \"" + attempts + "\"\n");
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("Standart attempts: " + attempts);
+		}
+		
+	}
+	
+	private static void createFile() {
+		try {
+			excel = new Excel(filePath, array.length, attempts, methods.length);
 			excel.createSheet(methods);
+			
 			System.out.print("Файл создан и открыт.\n");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private static void closeFile() {
+		try {
+			excel.write();
+			excel.close();
+			
+			System.out.print("Файл закрыт.\n");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) {
+		if (args.length != 0)
+			saveArgs(args);
+		
+		createFile();
 		
 		for (SortingMethod method : methods) {
 			
@@ -67,7 +98,7 @@ public class Main {
 				
 				System.out.print("Метод \"" + method.getName() + "\" с " + Main.array[array].length + " символами начал сортировку.");
 				
-				time = ExecutionTime.executionTime(method, ATTEMPTS, Main.array[array], excel);
+				time = ExecutionTime.executionTime(method, attempts, Main.array[array], excel);
 				
 				excel.setAllTime(time);
 				
@@ -77,14 +108,7 @@ public class Main {
 			System.out.print("Метод \"" + method.getName() + "\" конец сортировок.\n\n");
 		}
 		
-		try {
-			excel.write();
-			excel.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		System.out.print("Файл закрыт.\n");
+		closeFile();
 	}
 
 }
