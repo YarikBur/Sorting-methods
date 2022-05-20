@@ -1,4 +1,4 @@
-# Методы сортировки [![Build Status](https://img.shields.io/badge/Version-2022/05/18-red.svg)](#SortingMethods)
+# Методы сортировки [![Build Status](https://img.shields.io/badge/Version-2022/05/20-red.svg)](#SortingMethods)
 Разновидности методов сортировки на Java.
 <hr>
 
@@ -33,7 +33,8 @@ private static SortingMethod[] methods = {
   new ShakerSorting(),
   new CombSorting(),
   new InsertSorting(),
-  new SelectionSort()
+  new SelectionSort(),
+  new FastSorting()
 };
 ```
 
@@ -70,6 +71,6 @@ java -jar methods.jar "path" attempts
 | :heavy_check_mark: | Сортировка расчёской |
 | :heavy_check_mark: | Сортировка вставками |
 | :heavy_check_mark: | Сортировка выбором |
-| :x: | Быстрая сортировка |
+| :heavy_check_mark: | Быстрая сортировка |
 | :x: | Сортировка слиянием |
 | :x: | Пирамидальная сортировка |

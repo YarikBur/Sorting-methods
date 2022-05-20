@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import ru.asfick.methods.BoubleSorting;
 import ru.asfick.methods.CombSorting;
+import ru.asfick.methods.FastSorting;
 import ru.asfick.methods.InsertSorting;
 import ru.asfick.methods.SelectionSort;
 import ru.asfick.methods.ShakerSorting;
@@ -31,7 +32,8 @@ public class Main {
 			new ShakerSorting(),
 			new CombSorting(),
 			new InsertSorting(),
-			new SelectionSort()
+			new SelectionSort(),
+			new FastSorting()
 	};
 	
 	/**
